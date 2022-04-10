@@ -1,4 +1,4 @@
-import * as PostsController from "../controllers/posts-controller.js";
+import * as PostsController from "../controllers/posts-controllers.js";
 import { pagination } from "../middleware/pagination.js";
 import { validateRequest } from "../middleware/auth.js";
 
