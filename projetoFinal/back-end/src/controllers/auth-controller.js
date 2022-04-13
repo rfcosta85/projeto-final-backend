@@ -6,7 +6,7 @@ import {
 } from "../helpers/utils.js";
 
 export const signup = async (req, reply) => {
-  const { email, password: pass } = req.body;
+  const { email, password: pass, name, username } = req.body;
 
   try {
     const password = await hashPassword(pass);
@@ -15,6 +15,8 @@ export const signup = async (req, reply) => {
       data: {
         email,
         password,
+        name,
+        username,
       },
     });
 
