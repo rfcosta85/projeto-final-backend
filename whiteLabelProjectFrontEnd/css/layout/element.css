@@ -1,9 +1,0 @@
-body {
-  font-family: sans-serif;
-  display: grid;
-  grid-template-areas:
-    'header header header'
-    '. main .' /*Os pontos estão indicando que as laterais estarão vazia e somente o centro preenchido*/
-    'footer footer footer';
-  grid-template-columns: 1fr 1fr 1fr;
-}
