@@ -30,14 +30,16 @@ export const signup = async (req, reply) => {
 export const login = async (req, reply) => {
   try {
     const { email, password } = req.body;
+    console.log(req.body);
     let user = await prisma.user.findUnique({ where: { email } });
+    console.log(user);
 
     if (!user) {
       return reply.status(401).send({ error: "Invalid email or password" });
     }
 
     if (!(await comparePassword(password, user.password))) {
-      return reply.status(401).send({ error: "Invalid email or password" });
+      return reply.status(401).send({ error: "Invalid password" });
     }
 
     let { password: pass, ...data } = user;
